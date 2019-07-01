@@ -145,6 +145,8 @@ public abstract class Element implements IElement {
 		// TODO Auto-generated method stub
 		return element.getScreenshotAs(target);
 	}
+
+
 	
 	/*@Override
 	public WebElement findElement() {

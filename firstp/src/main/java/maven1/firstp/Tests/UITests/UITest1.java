@@ -2,11 +2,13 @@ package maven1.firstp.Tests.UITests;
 
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import maven1.firstp.Core.CustomObjects.BaseElement.Element;
 import maven1.firstp.Core.Other.Factory;
 import maven1.firstp.Pages.BasePage;
+import maven1.firstp.TestData.DataObjects.RegisterPageData;
 import maven1.firstp.Tests.BaseTest;
 
 public class UITest1 extends BaseTest {
@@ -29,7 +31,8 @@ public class UITest1 extends BaseTest {
 	  {
 		  new BasePage(super.driver)
 		  .NavigateToRegisterPage()
-		  .enterFirstName("Aravind")
-		  .enterLastName("Raj");  
+		  .GetRegisterPage(RegisterPageData.Load("test2"))
+		  .enterFirstName()
+		  .enterLastName();  
 	  }
 }

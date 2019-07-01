@@ -1,6 +1,8 @@
 package maven1.firstp.Core.CustomObjects;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Coordinates;
+import org.openqa.selenium.interactions.internal.Locatable;
 
 import maven1.firstp.Core.CustomObjects.BaseElement.Element;
 
@@ -12,22 +14,17 @@ public class TextBox extends Element {
 		super(element);
 		this.element = element;
 	}
+
+	//IF want to override base element method
+	/*@Override
+	public void sendKeys(int delayInMilliSeconds,String keysToSend)
+	{
+		System.out.println("testHere");
+	}*/
 	
-//	@Override
-//	public void sendKeys(int delayInMilliSeconds,CharSequence... keysToSend) {
-//		
-//		System.out.println("In TB");
-//		
-//			for(int i=0;i<keysToSend.length-1;i++)
-//			{
-//				try {
-//					Thread.sleep(delayInMilliSeconds);
-//				} catch (InterruptedException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//				this.element.sendKeys(keysToSend[i]);
-//			}
-//			
-//		}
+	public void sendKeys(int delayInMilliSeconds,String keysToSend,String testParam)
+	{
+		System.out.println("TextBox Specific sendKeys - not the base element");
+	}
+
 }

@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.Sleeper;
 import maven1.firstp.Pages.FOIb.HomePage;
 import maven1.firstp.Pages.FOIb.LoginPage;
 import maven1.firstp.Pages.FOIb.RegisterPage;
+import maven1.firstp.TestData.DataObjects.RegisterPageData;
 
 public class BasePage {
 	
@@ -20,12 +21,11 @@ public class BasePage {
 		BasePage.driver = driver;
 	}
 	
-	public RegisterPage NavigateToRegisterPage()
+	public BasePage NavigateToRegisterPage()
 	{
 		this.driver.navigate().to("http://newtours.demoaut.com/mercuryregister.php");
-		return new RegisterPage(driver);
-	}
-	
+		return this;
+	}	
 	
 	public HomePage GetHomePage()
 	{
@@ -37,8 +37,12 @@ public class BasePage {
 		return new LoginPage(driver);
 	}
 	
+	public RegisterPage GetRegisterPage(RegisterPageData data)
+	{
+		return new RegisterPage(driver,data);
+	}
 	public RegisterPage GetRegisterPage()
 	{
-		return new RegisterPage(driver);
+		return new RegisterPage(driver,RegisterPageData.Load(""));
 	}
 }

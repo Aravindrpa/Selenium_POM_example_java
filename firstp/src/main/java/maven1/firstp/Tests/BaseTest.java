@@ -61,10 +61,12 @@ public class BaseTest {
 	
   @BeforeMethod
   public void beforeMethod() {
+	  System.out.println("before test : Base");
   }
 
   @AfterMethod
   public void afterMethod() {
+	  System.out.println("after test : Base");
   }
 
   @BeforeClass
